@@ -1,0 +1,44 @@
+﻿<Window x:Class="WpfApp_Wordpad.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp_Wordpad"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Background="Blue" Content="Rich Text Editor" Foreground="White" HorizontalContentAlignment="Center" FontSize="17" FontWeight="Bold" BorderBrush="White"/>
+
+        <WrapPanel Grid.Row="1" Background="Blue">
+            <TextBox Width="150" Name="txtBox"/>
+            <Button Width="25" Margin="0 0 10 0" Height="28" Name="open_btn" Click="open_btn_Click">
+                <Image Source="/Images/triangle_icon.png"/>
+            </Button>
+            <CheckBox BorderBrush="DarkBlue" x:Name="chkBox" Checked="chkBox_Checked"/>
+            <Button Width="60" Margin="10 0 10 0" Content="Save" Background="White" Foreground="Blue" FontWeight="SemiBold" FontSize="15" BorderBrush="DarkBlue" BorderThickness="2" Name="save_btn" Click="save_btn_Click"/>
+            
+            <Button Width="70" Margin="10 0 10 0" Content="Save as" Background="White" Foreground="Blue" FontWeight="SemiBold" FontSize="15" BorderBrush="DarkBlue" BorderThickness="2" Name="saveAs_btn" Click="saveAs_btn_Click"/>
+            
+            <Button Width="60" Margin="10 0 10 0"
+                Content="Cut" Background="White" Foreground="Blue" FontWeight="SemiBold" FontSize="15" BorderBrush="DarkBlue" BorderThickness="2" Name="cut_btn" Click="cut_btn_Click"/>
+            
+            <Button Width="60" Margin="10 0 10 0"
+             Content="Copy" Background="White" Foreground="Blue" FontWeight="SemiBold" FontSize="15" BorderBrush="DarkBlue" BorderThickness="2" Name="copy_btn" Click="copy_btn_Click"/>
+            
+            <Button Width="60" Margin="10 0 10 0"
+                Content="Paste" Background="White" Foreground="Blue" FontWeight="SemiBold" FontSize="15" BorderBrush="DarkBlue" BorderThickness="2" Name="paste_btn" Click="paste_btn_Click"/>
+            
+            <Button Width="100" Margin="10 0 10 0"
+                Content="Select all" Background="White" Foreground="Blue" FontWeight="SemiBold" FontSize="15" BorderBrush="DarkBlue" BorderThickness="2" Name="selectAll_btn" Click="selectAll_btn_Click"/>
+
+        </WrapPanel>
+        <Grid Grid.Row="2" Background="AliceBlue">
+            <RichTextBox Margin="25" BorderBrush="Blue" Background="AliceBlue" Name="richTxt_Box" TextChanged="richTxt_Box_TextChanged"/>
+        </Grid>
+    </Grid>
+</Window>
